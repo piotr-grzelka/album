@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+      <br>
+    <input type="submit" value="Upload" class="default">
+  </form>
+{% endblock %}

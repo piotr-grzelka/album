@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ album.name }}</h1>
+    <div class="row" id="gallery">
+        {% for photo in photos %}
+            <div class="col-md-2 mb-4" data-src="{{ photo.large.url }}">
+                <img src="{{ photo.thumbnail.url }}" alt="{{ photo.name }}" class="rounded img-fluid"/>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+    lightGallery(document.getElementById('gallery'), {
+        thumbnail: true,
+    });
+    </script>
+{% endblock content %}
