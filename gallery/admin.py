@@ -19,6 +19,7 @@ class MultiUploadForm(forms.Form):
     images.widget.allow_multiple_selected = True
 
     def is_valid(self):
+        super().is_valid()
         return True
 
 
